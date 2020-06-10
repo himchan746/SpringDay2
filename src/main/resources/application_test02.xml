@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="print" class = "com.care.di_test02.PrintClass"/>
+	<bean id="oper" class = "com.care.di_test02.OperationClass">
+		<property name="name" value = "힘찬"/>
+	</bean>
+	<bean id="save" class = "com.care.di_test02.saveClass">
+		<property name="num1" value = "1"/>
+		<property name="num2" value = "2"/>
+		<property name="op" value = "+"/>
+		<property name="pc">
+			<ref bean="print"/>
+		</property>
+		<property name="oc">
+			<ref bean="oper"/>
+		</property>
+	</bean>
+</beans>
